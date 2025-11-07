@@ -21,3 +21,19 @@ button:hover{opacity:.9}
 .legend{color:#94a3b8;font-size:12px;margin-top:8px}
 .footer{color:#94a3b8;text-align:center;padding:24px 16px}
 @media(max-width:640px){.grid{grid-template-columns:1fr}}
+
+
+/* --- Demo banner --- */
+.demo-banner{
+  background:#1d4ed8;
+  color:#fff;
+  text-align:center;
+  padding:8px 12px;
+  font-size:14px;
+  position:sticky;
+  top:0;
+  z-index:50;
+  border-bottom:1px solid rgba(255,255,255,.15);
+}
+.footer a{color:#e6ebf5;text-decoration:underline}
+.footer a:hover{text-decoration:none}
