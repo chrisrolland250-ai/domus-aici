@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Domus Premium — Avance Immédiate (Démo)</title>
+  <meta name="description" content="Simulation d'une demande d'avance immédiate du crédit d'impôt pour les services à la personne — Domus Premium (démo URSSAF).">
+  <meta property="og:title" content="Domus Premium — Avance Immédiate (Démo)">
+  <meta property="og:description" content="Simulation d'une demande AICI — démo sans transmission réelle.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aici.domuspremium.fr/">
+  <meta property="og:image" content="https://aici.domuspremium.fr/assets/logo.png">
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="demo-banner" role="status" aria-live="polite">
+    Démonstration — aucune donnée réelle n’est transmise à l’URSSAF.
+  </div>
+  <header class="header" role="banner">
+    <div class="brand">
+      <img src="assets/logo.png" alt="Domus Premium" class="logo" width="42" height="42">
+      <div class="titles">
+        <h1>Domus Premium — Avance Immédiate (Démo)</h1>
+        <p class="subtitle">Simulation pour habilitation URSSAF — Services à la personne (lecture seule)</p>
+      </div>
+      <div class="actions">
+        <button id="printBtn" class="ghost" title="Imprimer/Enregistrer en PDF">Imprimer (PDF)</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <section class="card">
+      <ol class="stepper" aria-label="Parcours de démonstration">
+        <li><span>1</span> Saisir une demande (client, prestation, date, montant)</li>
+        <li><span>2</span> Cliquer <strong>Calculer</strong> pour afficher la part AICI (50%)</li>
+        <li><span>3</span> Cliquer <strong>Envoyer à l’URSSAF (démo)</strong> pour simuler la transmission</li>
+      </ol>
+      <details class="note">
+        <summary>À propos de l’Avance Immédiate</summary>
+        <p>Le service d’avance immédiate du crédit d’impôt est géré par l’Urssaf. Cette maquette illustre un parcours simplifié pour l’habilitation : aucun appel API réel, aucune donnée personnelle n’est transmise.</p>
+      </details>
+    </section>
+
+    <section class="card" aria-labelledby="formTitle">
+      <h2 id="formTitle">Créer une demande d’avance immédiate</h2>
+      <form id="aiciForm">
+        <div class="grid">
+          <label>
+            <span>Client</span>
+            <input type="text" id="client" placeholder="Nom Prénom" autocomplete="name" required>
+          </label>
+          <label>
+            <span>Prestation</span>
+            <input type="text" id="prestation" placeholder="Ex : Entretien jardin" required>
+          </label>
+          <label>
+            <span>Date de prestation</span>
+            <input type="date" id="datePrest" required>
+          </label>
+          <label>
+            <span>Montant TTC (€)</span>
+            <input type="number" id="montant" min="1" step="0.01" placeholder="Ex : 80,00" inputmode="decimal" required>
+          </label>
+        </div>
+        <div class="row">
+          <button type="button" id="calcBtn">Calculer</button>
+          <button type="submit" class="primary">Envoyer à l’URSSAF (démo)</button>
+        </div>
+      </form>
+      <div id="calcZone" class="calc hidden" aria-live="polite"></div>
+      <p class="legal-mini">Calcul simplifié (50&nbsp;%) à visée démonstrative, sans prise en compte des plafonds et cas particuliers.</p>
+    </section>
+
+    <section class="card" aria-labelledby="histTitle">
+      <h2 id="histTitle">Historique (fictif)</h2>
+      <table class="table" id="historyTable" aria-describedby="legend">
+        <thead>
+          <tr><th scope="col">Date</th><th scope="col">Client</th><th scope="col">Prestation</th><th scope="col">Montant</th><th scope="col">Part AICI</th><th scope="col">Statut</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p id="legend" class="legend">Cet historique est une simulation locale à but de démonstration.</p>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p>Domus Premium — Démonstrateur AICI • <a href="https://www.domuspremium.fr" target="_blank" rel="noopener">www.domuspremium.fr</a></p>
+    <p><a href="assets/cgu.html">CGU</a> • <a href="assets/confidentialite.html">Confidentialité</a></p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
