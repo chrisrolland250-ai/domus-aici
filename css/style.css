@@ -1,39 +1,47 @@
-*{box-sizing:border-box}html,body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:#0b1220;color:#e6ebf5}
-.header{background:#0f172a;border-bottom:1px solid #1f2a44;padding:16px}
-.brand{display:flex;gap:12px;align-items:center}
-.logo{width:42px;height:42px;border-radius:8px;object-fit:cover;background:#1f2a44}
-.titles h1{margin:0;font-size:18px}
-.titles .subtitle{margin:2px 0 0;color:#94a3b8;font-size:12px}
-.container{max-width:980px;margin:24px auto;padding:0 16px;display:grid;gap:16px}
-.card{background:#0f172a;border:1px solid #1f2a44;border-radius:14px;padding:16px}
-h2{margin:0 0 12px;font-size:16px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-label{display:flex;flex-direction:column;gap:6px;font-size:12px;color:#94a3b8}
-input{background:#0b1220;border:1px solid #1f2a44;border-radius:10px;padding:10px 12px;color:#e6ebf5}
-.row{display:flex;gap:10px;margin-top:12px}
-button{appearance:none;border:1px solid #1f2a44;background:#0b1220;color:#e6ebf5;padding:10px 14px;border-radius:12px;cursor:pointer}
-button.primary{background:#1d4ed8;border-color:#1d4ed8}
-button:hover{opacity:.9}
-.calc{margin-top:12px;padding:12px;border-radius:12px;background:#0b1220;border:1px solid #1f2a44}
-.hidden{display:none}
-.table{width:100%;border-collapse:collapse;font-size:13px}
-.table th,.table td{border-bottom:1px solid #1f2a44;padding:8px;text-align:left}
-.legend{color:#94a3b8;font-size:12px;margin-top:8px}
-.footer{color:#94a3b8;text-align:center;padding:24px 16px}
-@media(max-width:640px){.grid{grid-template-columns:1fr}}
-
-
-/* --- Demo banner --- */
+:root{
+  --bg:#0b1220;
+  --navy:#0d2742;
+  --navy-2:#0f172a;
+  --border:#1f2a44;
+  --text:#e6ebf5;
+  --muted:#94a3b8;
+  --gold:#d6b25a;
+}
+*{box-sizing:border-box}
+html,body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:var(--bg);color:var(--text)}
 .demo-banner{
-  background:#1d4ed8;
-  color:#fff;
+  background:var(--navy);
+  color:var(--text);
   text-align:center;
   padding:8px 12px;
   font-size:14px;
   position:sticky;
   top:0;
   z-index:50;
-  border-bottom:1px solid rgba(255,255,255,.15);
+  border-bottom:2px solid var(--gold);
 }
-.footer a{color:#e6ebf5;text-decoration:underline}
+.header{background:var(--navy);border-bottom:1px solid var(--border);padding:16px}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:42px;height:42px;border-radius:8px;object-fit:contain;background:#1f2a44}
+.titles h1{margin:0;font-size:18px;letter-spacing:.2px}
+.titles .subtitle{margin:2px 0 0;color:var(--muted);font-size:12px}
+.container{max-width:980px;margin:24px auto;padding:0 16px;display:grid;gap:16px}
+.card{background:var(--navy-2);border:1px solid var(--border);border-radius:14px;padding:16px}
+h2{margin:0 0 12px;font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+label{display:flex;flex-direction:column;gap:6px;font-size:12px;color:var(--muted)}
+input{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:10px 12px;color:var(--text)}
+.row{display:flex;gap:10px;margin-top:12px}
+button{appearance:none;border:1px solid var(--border);background:var(--bg);color:var(--text);padding:10px 14px;border-radius:12px;cursor:pointer}
+button.primary{background:var(--gold);border-color:var(--gold);color:#0e0f12}
+button.primary:hover{filter:brightness(0.95)}
+button:hover{opacity:.95}
+.calc{margin-top:12px;padding:12px;border-radius:12px;background:var(--bg);border:1px solid var(--border)}
+.hidden{display:none}
+.table{width:100%;border-collapse:collapse;font-size:13px}
+.table th,.table td{border-bottom:1px solid var(--border);padding:8px;text-align:left}
+.legend{color:var(--muted);font-size:12px;margin-top:8px}
+.footer{color:var(--muted);text-align:center;padding:24px 16px}
+.footer a{color:var(--text);text-decoration:underline}
 .footer a:hover{text-decoration:none}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}

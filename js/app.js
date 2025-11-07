@@ -34,7 +34,6 @@
     const m = parseFloat(document.getElementById('montant').value||'0');
     if(!c || !p || !m){ alert('Merci de compléter le formulaire.'); return; }
     const calc = compute();
-    // Simulate a successful submission
     const tr = document.createElement('tr');
     tr.innerHTML = `<td>${d}</td><td>${c}</td><td>${p}</td><td>${format(m)}</td><td>${format(calc.aici)}</td><td>Transmis (démo)</td>`;
     tbody.prepend(tr);
@@ -43,7 +42,6 @@
     alert('Dossier transmis (démo). Aucun envoi réel à l’URSSAF n’est effectué.');
   });
 
-  // Seed demo data
   const seed = [
     {d:'2025-10-12', c:'Mme Dupont', p:'Entretien jardin', m:80},
     {d:'2025-10-05', c:'M. Martin', p:'Bricolage léger', m:120}
