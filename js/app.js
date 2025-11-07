@@ -3,6 +3,7 @@
   const calcBtn = document.getElementById('calcBtn');
   const calcZone = document.getElementById('calcZone');
   const tbody = document.querySelector('#historyTable tbody');
+  const printBtn = document.getElementById('printBtn');
 
   const EURO = new Intl.NumberFormat('fr-FR', {style: 'currency', currency: 'EUR'});
 
@@ -42,6 +43,7 @@
     alert('Dossier transmis (démo). Aucun envoi réel à l’URSSAF n’est effectué.');
   });
 
+  // Seed demo rows
   const seed = [
     {d:'2025-10-12', c:'Mme Dupont', p:'Entretien jardin', m:80},
     {d:'2025-10-05', c:'M. Martin', p:'Bricolage léger', m:120}
@@ -52,4 +54,7 @@
     tr.innerHTML = `<td>${x.d}</td><td>${x.c}</td><td>${x.p}</td><td>${format(x.m)}</td><td>${format(aici)}</td><td>Réglé (démo)</td>`;
     tbody.appendChild(tr);
   });
+
+  // Print to PDF (for evidence to URSSAF if needed)
+  printBtn?.addEventListener('click', ()=> window.print());
 })();
