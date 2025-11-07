@@ -18,7 +18,7 @@
     calcZone.innerHTML = `
       <div><strong>Total TTC :</strong> ${format(montant)}</div>
       <div><strong>Avance immédiate (50%) :</strong> ${format(aici)}</div>
-      <div><strong>Reste à payer client :</strong> ${format(reste)}</div>
+      <div><strong>Reste à charge client :</strong> ${format(reste)}</div>
       <small>Note : calcul démo simplifié, sans plafonds ni cas particuliers.</small>
     `;
     calcZone.classList.remove('hidden');
